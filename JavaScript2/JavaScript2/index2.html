@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function toplamaYap() {
+            var sayi1 = document.getElementById("s1").value;
+            var sayi2 = document.getElementById("s2").value;
+
+            document.getElementById("toplamGoster").innerText = parseInt(sayi1) + parseInt(sayi2);
+        }
+        function topla(sayi1, sayi2) {
+            document.getElementById("toplamGoster").innerText = sayi1 + sayi2;
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="s1" />
+    <input type="text" id="s2" />
+    <button onclick="toplamaYap()">
+        Toplama Yap
+    </button>
+    <input type="button" value="Parametreli Topla" onclick="topla(parseInt(s1.value), parseInt(s2.value))" />
+
+    <p id="toplamGoster">0</p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Input-Output</title>
+    <script type="text/javascript">
+        document.write(5 + 6);
+
+        function yazdir() {
+            document.write("Hoşgeldiniz...<br/>");
+            document.write(5 + 6);
+            document.write("<h1>Hello World</h1><p>Have a nice day!</p>");
+            document.write('<input type="text" value="Bilge Adam"/>');
+        }
+
+        alert("Sayfa yüklenecek...");
+
+        var sayi = prompt("Lütfen bir sayi giriniz: ", "25");
+        alert(typeof (sayi));
+
+        var eminMisiniz = confirm("Değişiklikler yapılacaktır, onaylıyor musunuz?")
+        alert(eminMisiniz);
+    </script>
+</head>
+<body>
+    <input type="button" value="YAZ" id="yaz" onclick="yazdir()"/>
+</body>
+</html>

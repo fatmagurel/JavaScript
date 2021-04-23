@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script>
+        var veriler = document.getElementById("veriler");
+        if (typeof (Storage) !== "undefined") {
+
+            if (localStorage.ziyaretSayisi) {
+                localStorage.ziyaretSayisi = Number(localStorage.ziyaretSayisi) + 1;
+            } else {
+                localStorage.ziyaretSayisi = 1;
+            }
+
+            if (sessionStorage.ziyaretSayisi) {
+                sessionStorage.ziyaretSayisi = Number(sessionStorage.ziyaretSayisi) + 1;
+            }
+            else {
+                sessionStorage.ziyaretSayisi = 1;
+            }
+
+            veriler.innerHTML += "localStorage değeri = " + localStorage.ziyaretSayisi + "<br />";
+            veriler.innerHTML += "sessionStorage değeri = " + sessionStorage.ziyaretSayisi;
+            
+
+        } else {
+            alert("Tarayıcınız Web Storage API desteklemiyor.");
+        }
+
+    </script>
+</head>
+<body style="background-color:darkolivegreen">
+    <div style="margin-left:auto; margin-right:auto; margin-top:200px; width:400px; height:250px; background-color:darkgray">
+        <div id="veriler" style="margin-left:auto; margin-right:auto; padding-top:50px; width:150px; height:150px;">
+            <label>Kullanıcı Adı:</label><br />
+            <input id="ad" type="text" placeholder="Kullanıcı Adı" /><br /><br />
+            <label>Kullanıcı Şifresi:</label><br />
+            <input id="sifre" type="password" placeholder="Kullanıcı Şifresi" /><br /><br />
+            <input id="gonder" type="submit" />
+        </div>
+    </div>
+
+</body>
+</html>

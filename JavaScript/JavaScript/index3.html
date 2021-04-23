@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function Hesapla(sayi1, sayi2) {
+            document.getElementById('demo').innerHTML = 'Toplama Sonucu:' + (sayi1 + sayi2);
+            alert(sayi1 + sayi2);
+        }
+
+        function Message(metin1, metin2) {
+            document.getElementById('demo').innerHTML ='Toplama işlemi sonucu: ' +(parseInt(metin1) + parseInt(metin2));
+        }
+    </script>
+</head>
+<body>
+    <div style="margin-top:50px;">
+        <figure>
+            <pre>
+            <span id="demo"></span>
+            </pre>
+        </figure>
+
+        <button onclick="Hesapla(5, 6)">Tıkla!</button>
+        <button onclick="Message('5', '6')">Tıkla!</button>
+    </div>
+</body>
+</html>

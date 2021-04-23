@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script  type="text/javascript">
+        function Birlestir(ad, soyad) {
+            var mail = ad + '.' + soyad + '@mail.com';
+            document.getElementById('demo').innerHTML = 'Email Adresiniz: ' + mail;
+            alert(mail);
+            console.log(mail);
+        }
+    </script>
+</head>
+<body>
+    <div style="margin-top:50px;">
+        <figure>
+            <pre>
+            <span id="demo"></span>
+            </pre>
+        </figure>
+        <label>Ad</label>
+        <input type="text" id="ad" value=""/><br />
+        <label>Soyad</label>
+        <input type="text" id="soyad" value=""/>
+        <button onclick="Birlestir(document.getElementById('ad').value, document.getElementById('soyad').value)">Email</button>
+    </div>
+</body>
+</html>

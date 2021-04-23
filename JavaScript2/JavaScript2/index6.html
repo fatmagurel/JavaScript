@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .dropbtn {
+            background-color: #3498DB;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+            .dropbtn:hover, .dropbtn:focus {
+                background-color: #2980B9;
+            }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            float: left;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: aqua;
+            min-width: 160px;
+            height: auto;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+
+        #menu {
+            font-size: 15pt;
+            border-radius: 20px;
+            background-color: aqua;
+        }
+
+        div {
+            height: 1000px;
+        }
+
+        #hakkimizda {
+            background-color: cornflowerblue;
+        }
+
+        #iletisim {
+            background-color: red;
+        }
+
+        #kariyer {
+            background-color: hotpink;
+        }
+
+        #anasayfa {
+            background-color: burlywood;
+        }
+
+        .buton {
+            float: left;
+        }
+
+        #login {
+            font-size: 15pt;
+            border-radius: 20px;
+            background-color: aqua;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            font-size: 20pt;
+            font-style: italic;
+        }
+    </style>
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        window.onmouseenter = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        function login() {
+            document.write("<body style='background-color:darkolivegreen'><div style='margin-left:auto; margin-right:auto; margin-top:200px; width:400px; height:250px; background-color:darkgray'><div id='veriler' style='margin-left:auto; margin-right:auto; padding-top:50px; width:150px; height:150px;'><label>Kullanıcı Adı:</label><br/><input id='ad' type='text' placeholder='Kullanıcı Adı' /><br /><br/><label>Kullanıcı Şifresi:</label><br/><input id='sifre' type='password' placeholder='Kullanıcı Şifresi' /><br/><br /><input onclick='consoleYazdir()' id='gonder' type='submit' /><button style='float:right;'><a href='index6.html'>GERİ</a></button></div ></div></body>");
+
+        }
+
+        function consoleYazdir() {
+            var kullaniciAdi = document.getElementById('ad').value;
+            var kullaniciSifre = document.getElementById('sifre').value
+            var giris = "Kullanıcı Adı: " + kullaniciAdi + " " + "Kullanıcı Şifresi: " + kullaniciSifre;
+            console.log(giris);
+        }
+    </script>
+
+
+</head>
+<body>
+    <section id="anasayfa">
+        <div class="dropdown">
+            <button id="menu" onmouseenter="myFunction()" class="dropbtn">MENU</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#anasayfa">Anasayfa</a>
+                <a href="#hakkimizda">Hakkımızda</a>
+                <a href="#kariyer">Kariyer</a>
+                <a href="#iletisim">İletişim</a>
+            </div>
+        </div>
+        <div class="buton">
+            <button id="menu" onclick="login()" class="dropbtn">Login</button>
+        </div>
+
+        <div class="header">
+            <h1>ANASAYFA</h1>
+
+        </div>
+
+    </section>
+
+    <section id="hakkimizda">
+        <div class="header">
+            <h1>HAKKIMIZDA</h1>
+        </div>
+    </section>
+
+    <section id="kariyer">
+        <div class="header">
+            <h1>KARİYER</h1>
+        </div>
+    </section>
+
+    <section id="iletisim">
+        <div class="header">
+            <h1>İLETİŞİM</h1>
+        </div>
+    </section>
+</body>
+</html>

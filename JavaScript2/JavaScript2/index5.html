@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>Şuanki zaman ile ilgili mesajı görmek için aşağıdaki butonu tıklayabilirsiniz...</p>
+
+    <button onclick="myFunction()">Tıkla</button>
+
+    <script>
+        function myFunction() {
+            var zaman = new Date().getHours();
+            var mesaj;
+            //var zaman = new Date();
+           // zaman.setHours(10);
+            if (zaman < 12) {
+                mesaj = "Günaydın";
+            }
+            else if (zaman >= 12 && zaman <= 18) {
+                mesaj = "İyi günler";
+            }
+            else {
+                mesaj = "İyi akşamlar";
+            }
+            alert(mesaj);
+            document.write(mesaj);
+        }
+    </script>
+</body>
+</html>

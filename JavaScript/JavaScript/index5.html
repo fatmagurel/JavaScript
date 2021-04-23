@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="margin-top:50px;">
+            <div class="btn-group" role="group">
+                <button type="button" id="btn1" class="btn btn-default">Length</button>
+                <button type="button" id="btn2" class="btn btn-default">Includes</button>
+                <button type="button" id="btn3" class="btn btn-default">Concat</button>
+                <button type="button" id="btn4" class="btn btn-default">Entries</button>
+                <button type="button" id="btn5" class="btn btn-default">forEach</button>
+                <button type="button" id="btn6" class="btn btn-default">Pop</button>
+                <button type="button" id="btn7" class="btn btn-default">Shift</button>
+                <button type="button" id="btn8" class="btn btn-default">Push</button>
+                <button type="button" id="btn9" class="btn btn-default">Unshift</button>
+                <button type="button" id="btn10" class="btn btn-default">Splice</button>
+            </div>
+        </div>
+        <div>
+            <figure>
+                <pre>
+                <span id="demo"></span>
+            </pre>
+            </figure>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    //document.getElementById('btn1').onclick = function () { }
+    //document.getElementById('btn3').addEventListener("click", function () { alert("test")});
+    //document.getElementById('btn4').addEventListener("mouseover", function () { alert("test") });
+
+    //c# ta dizi oluşturma:
+   // string[] sehirler = {'Ankara','İstanbul','İzmir','Bursa','Antalya','Adana','Burdur','Kars'}
+    //javascript te dizi oluşturma
+    var sehirler = ['Ankara', 'İstanbul', 'İzmir', 'Bursa', 'Antalya', 'Adana', 'Burdur', 'Kars'];
+    //bir dizinin uzunluğunu almak için:
+    document.getElementById('btn1').onclick = function () {
+        alert('Dizinin uzunluğu: ' + sehirler.length);
+    }
+
+    //dizinin belirli bir elemanı içerip içermediğini bakar, true false döner.
+    document.getElementById('btn2').onclick = function () {
+        alert(sehirler.includes('Ankara')),
+        alert(sehirler.includes('Kocaeli'));
+    }
+
+    //dizileri birleştirmek için:
+    var meyveler = ['Elma', 'Kiraz', 'Muz', 'Çilek'];
+    document.getElementById('btn3').onclick = function () {
+        var yeniDizi = sehirler.concat(meyveler);
+        alert('Yeni dizi: ' + yeniDizi);
+    }
+
+    //dizinin indeksi ile birlikte çıktı verir.
+    document.getElementById('btn4').onclick = function () {
+        var sirala = meyveler.entries();
+
+        document.getElementById("demo").innerHTML = "";
+        for (x of sirala) {
+            document.getElementById("demo").innerHTML += x + "<br>";
+        }
+    }
+
+    //Dizideki her bir elemanı listelemek için: 
+    document.getElementById('btn5').onclick = function () {
+        document.getElementById("demo").innerHTML = "";
+        sehirler.forEach(listele);
+        
+        function listele(item, index) {
+            document.getElementById("demo").innerHTML += index + ":" + item + "<br>";
+        }
+    }
+
+    //Dizinin son elemanını kaldırmak için:
+    document.getElementById('btn6').onclick = function () {
+        document.getElementById("demo").innerHTML = "";
+        sehirler.pop();
+        sehirler.forEach(listele);
+        
+        function listele(item, index) {
+            document.getElementById("demo").innerHTML += index + ":" + item + "<br>";
+        }
+    }
+
+    //Dizinin ilk elemanını kaldırmak için:
+    document.getElementById('btn7').onclick = function () {
+        document.getElementById("demo").innerHTML = "";
+        sehirler.shift();
+        sehirler.forEach(listele);
+
+        function listele(item, index) {
+            document.getElementById("demo").innerHTML += index + ":" + item + "<br>";
+        }
+    }
+
+    //Diziye yeni eleman eklemek için:
+    document.getElementById('btn8').onclick = function () {
+        document.getElementById("demo").innerHTML = "";
+        sehirler.push("Kütahya");
+        sehirler.forEach(listele);
+
+        function listele(item, index) {
+            document.getElementById("demo").innerHTML += index + ":" + item + "<br>";
+        }
+    }
+
+    //Dizinin başına yeni eleman eklemek için:
+    document.getElementById('btn9').onclick = function () {
+        document.getElementById("demo").innerHTML = "";
+        sehirler.unshift("Muğla");
+        sehirler.forEach(listele);
+
+        function listele(item, index) {
+            document.getElementById("demo").innerHTML += index + ":" + item + "<br>";
+        }
+    }
+
+    //Diziden eleman silerken ekleme de yapar.1.parametre kaçıncı indeksten itibaren ,2.parametre kaç tane silineceğini söyler.
+    document.getElementById('btn10').onclick = function () {
+        document.getElementById("demo").innerHTML = "";
+        sehirler.splice(2, 1, "Van", "Bolu");
+        sehirler.forEach(listele);
+
+        function listele(item, index) {
+            document.getElementById("demo").innerHTML += index + ":" + item + "<br>";
+        }
+    }
+</script>

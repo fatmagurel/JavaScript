@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="sablonDivim"></div>
+    <input id="input1" name="input1" class="myClass" value="123" />
+    <input id="input2" name="input2" class="myClass" value="123" />
+    <input id="input3" name="input3" class="myInputClass" value="123" />
+    <input id="input4" name="input4" class="myClass2" value="123" />
+    <input id="input5" name="input5" class="myInputClass2" value="123" />
+    <div class="myClass"></div>
+    <div class="myClass"></div>
+    <div class="myClass2">
+        <p id="inputp" style="color:white;">Merhaba Dünya Örnek Çocuk Eleman</p>
+    </div>
+    <div class="myClass2"></div>
+</body>
+</html>
+
+<script>
+    //DOM(BELGE NESNE YAPISI)
+    document.getElementById("input1").height = 400;
+    var obj = document.getElementById("input1");
+    obj.height = 400;
+
+    document.getElementsByClassName("myClass")[2].style.height = "40px";
+    document.getElementsByClassName("myClass")[2].style.width = "130px";
+    document.getElementsByClassName("myClass")[2].style.backgroundColor = "red";
+
+    document.getElementsByClassName("myClass")["input2"].style.backgroundColor = "yellow";//input2 name in adı
+
+    //divlerden class ı myClass olanların içine merhaba dünya yazsın...
+    var list = document.getElementsByTagName("div");
+
+    for (var item in list) {
+        if (list[item].className == "myClass") {
+            list[item].innerText = "Merhaba Dünya";
+        }
+    }
+    //Dokümanda bulunan ilk div in içerisine üzerinde kaydet yazan bir buton ekleyiniz.
+
+    document.getElementsByTagName("div")[0].innerHTML = "<input type='button' value='KAYDET'/><br/><b>Burada da bir şeyler yazabiliriz.</b>";
+
+
+    document.getElementById("inputp").parentNode.style.backgroundColor = "navy";
+
+    //body nin içerisindeki tüm input tagine sahip childNode ların value larını değiştirelim.
+    var bodyninCocuklari = document.body.childNodes;
+
+    for (var index in bodyninCocuklari) {
+        if (bodyninCocuklari[index].constructor == document.getElementsByTagName("input")[0].constructor) {
+            bodyninCocuklari[index].setAttribute("value", "yeni bir değer");
+        }
+    }
+
+    //SablonDiv imin sıradaki kardeş elemanının value sunu değitirelim...
+    document.getElementById("sablonDivim").nextElementSibling.setAttribute("value", "nextSibling ile değiştirildi...")
+    //next gibi previous ile geriye de gidilebilir.
+</script>
